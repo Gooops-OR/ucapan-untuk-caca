@@ -5,23 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untuk Putri Aliya Atasya</title>
     
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@200;300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #111111; /* Background luar lebih gelap agar frame 16:9 menonjol */
+            background-color: #111111;
             font-family: 'Urbanist', sans-serif;
             color: #4a3728;
             display: flex;
@@ -31,11 +23,10 @@
             overflow: hidden;
         }
 
-        /* --- CONTAINER SLIDER 1920x1080 (16:9 Aspect Ratio) --- */
         .slider-container {
             width: 95vw;
             max-width: 1400px;
-            aspect-ratio: 16 / 9; /* Mengunci rasio persis seperti PPT/Layar 1080p */
+            aspect-ratio: 16 / 9;
             background-color: #fcf9f5;
             position: relative;
             box-shadow: 0 10px 40px rgba(0,0,0,0.6);
@@ -44,7 +35,6 @@
             flex-direction: column;
         }
 
-        /* --- SUB JUDUL DENGAN GARIS (Seperti Gambar) --- */
         .slide-header {
             position: absolute;
             top: 50px;
@@ -87,7 +77,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- TYPOGRAPHY --- */
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(3rem, 5vw, 4.5rem);
@@ -105,11 +94,7 @@
             text-transform: uppercase;
         }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #5c4d42;
-        }
+        p { font-size: 1.2rem; line-height: 1.8; color: #5c4d42; }
 
         .typing-ganteng {
             font-style: italic;
@@ -121,40 +106,11 @@
             text-align: left;
         }
 
-        /* --- GAYA CORETAN MIRIP GAMBAR REFERENSI --- */
-        .ucapan-biasa {
-            font-size: 2.2rem;
-            font-weight: 300;
-            color: #333;
-            margin-bottom: 15px;
-        }
+        .ucapan-biasa { font-size: 2.2rem; font-weight: 300; color: #333; margin-bottom: 15px; }
+        .coret { text-decoration: line-through; color: #c4b7ad; font-size: 2.8rem; font-weight: 300; display: block; margin-bottom: 15px; }
+        .ganti { color: #a01010; font-weight: 600; font-size: 4rem; font-family: 'Playfair Display', serif; display: block; margin-bottom: 30px; }
+        .catatan-kecil { font-style: italic; color: #8c786a; font-size: 1.1rem; font-weight: 300; }
 
-        .coret {
-            text-decoration: line-through;
-            color: #c4b7ad;
-            font-size: 2.8rem;
-            font-weight: 300;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .ganti {
-            color: #a01010;
-            font-weight: 600;
-            font-size: 4rem;
-            font-family: 'Playfair Display', serif;
-            display: block;
-            margin-bottom: 30px;
-        }
-
-        .catatan-kecil {
-            font-style: italic;
-            color: #8c786a;
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        /* --- LAYOUT SPLIT --- */
         .split-layout {
             display: flex;
             width: 100%;
@@ -180,24 +136,22 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* --- GALLERY GRID --- */
+        /* --- GALLERY GRID FIX --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            margin-bottom: 30px; /* Margin bawah diperbesar agar teks lebih lega */
+            margin-bottom: 30px;
             width: 100%;
-            /* Aturan height: 60%; sudah dihapus di sini */
         }
 
         .gallery-grid img {
             width: 100%;
-            aspect-ratio: 16 / 10; /* Tambahkan ini agar tinggi foto terkunci proporsional */
+            aspect-ratio: 16 / 10;
             object-fit: cover;
             border-radius: 4px;
         }
 
-        /* --- TOMBOL NAVIGASI --- */
         .nav-controls {
             position: absolute;
             bottom: 30px;
@@ -227,7 +181,6 @@
         .btn-nav:hover { background-color: #8b0000; color: #ffffff; }
         .btn-nav:disabled { opacity: 0; pointer-events: none; }
 
-        /* Tombol Musik */
         #btn-musik {
             position: fixed;
             top: 20px;
@@ -250,13 +203,13 @@
 
     <button id="btn-musik" onclick="aturMusik()"><i id="ikon-musik" class="fa-solid fa-play"></i></button>
 
+    <!-- File audio langsung mengarah ke lagu.mp3 -->
     <audio id="laguLatar" loop>
         <source src="lagu.mp3" type="audio/mpeg">
     </audio>
 
     <div class="slider-container">
         
-        <!-- SLIDE 1: PEMBUKA -->
         <div class="slide active">
             <p style="letter-spacing: 5px; text-transform: uppercase; color: #8c786a; margin-bottom: 10px; font-weight: 300;">Dedicated to</p>
             <h1>Putri Aliya Atasya</h1>
@@ -265,10 +218,8 @@
             </p>
         </div>
 
-        <!-- SLIDE 2: A LITTLE CONFESSION (Sesuai Screenshot) -->
         <div class="slide">
             <div class="slide-header">A Little Confession</div>
-            
             <p class="ucapan-biasa">Selamat ulang tahun ya,</p>
             <span class="coret">Pacarku</span>
             <span class="ganti">Mantanku yang masih aku sayangi.</span>
@@ -277,7 +228,6 @@
             </p>
         </div>
 
-        <!-- SLIDE 3: UNSPOKEN WORDS -->
         <div class="slide">
             <div class="slide-header">Unspoken Words</div>
             <div class="split-layout">
@@ -290,29 +240,27 @@
                     </p>
                 </div>
                 <div class="split-photo">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600" alt="Putri">
+                    <img src="images/foto%201.jpg" alt="Putri">
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: CHAPTER I: MEMORIES -->
         <div class="slide">
             <div class="slide-header">Chapter I</div>
             <h2 style="margin-top: 20px;">MEMORIES</h2>
             <div class="gallery-grid">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400" alt="Memori 1">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400" alt="Memori 2">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400" alt="Memori 3">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400" alt="Memori 4">
-                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=400" alt="Memori 5">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400" alt="Memori 6">
+                <img src="images/foto%202.jpg" alt="Memori 1">
+                <img src="images/foto%203.jpg" alt="Memori 2">
+                <img src="images/foto%204.jpg" alt="Memori 3">
+                <img src="images/foto%205.jpeg" alt="Memori 4">
+                <img src="images/foto%206.jpeg" alt="Memori 5">
+                <img src="images/foto%207.jpg" alt="Memori 6">
             </div>
             <p style="font-style: italic; font-weight: 600; margin-top: 15px;">
                 "setiap sudut ingatan tentangmu adalah tempat favoritku untuk pulang."
             </p>
         </div>
 
-        <!-- SLIDE 5: CHAPTER II -->
         <div class="slide">
             <div class="slide-header">Chapter II</div>
             <div class="split-layout">
@@ -325,12 +273,11 @@
                     </p>
                 </div>
                 <div class="split-photo">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=600" alt="Putri">
+                    <img src="images/foto%208.jpeg" alt="Putri">
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 6: MY PRAYERS FOR YOU -->
         <div class="slide">
             <div class="slide-header">My Prayers For You</div>
             <div style="text-align: left; max-width: 900px; margin: 0 auto;">
@@ -341,7 +288,6 @@
             </div>
         </div>
 
-        <!-- SLIDE 7: A SIMPLE WISH -->
         <div class="slide">
             <div class="slide-header">A Simple Wish</div>
             <div class="split-layout" style="flex-direction: row-reverse;">
@@ -353,12 +299,11 @@
                     </p>
                 </div>
                 <div class="split-photo">
-                    <img src="https://images.unsplash.com/photo-1544833058-e70f66b0c208?q=80&w=600" alt="Lilin">
+                    <img src="images/foto%209.png" alt="Lilin">
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 8: COSMIC CONNECTION -->
         <div class="slide">
             <div class="slide-header">Cosmic Connection</div>
             <div class="split-layout" style="flex-direction: row-reverse;">
@@ -371,21 +316,19 @@
                     </p>
                 </div>
                 <div class="split-photo">
-                    <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?q=80&w=600" alt="Langit Malam">
+                    <img src="images/bulan.png" alt="Langit Malam">
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 9: INFINITE HOPES -->
         <div class="slide">
             <div class="slide-header">Infinite Hopes</div>
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800" alt="Putri" style="width: 80%; height: 60%; object-fit: cover; border-radius: 8px; margin-bottom: 30px;">
+            <img src="images/foto%201.jpg" alt="Putri" style="width: 80%; height: 60%; object-fit: cover; border-radius: 8px; margin-bottom: 30px;">
             <p style="font-style: italic; font-weight: 600;">
                 "semua doa baik ini, khusus aku kumpulkan untuk merayakan harimu."
             </p>
         </div>
 
-        <!-- SLIDE 10: DARI KEDALAMAN HATI -->
         <div class="slide">
             <div class="slide-header">Dari Kedalaman Hati</div>
             <div style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 2;">
@@ -395,7 +338,6 @@
             </div>
         </div>
 
-        <!-- SLIDE 11: QUOTE TERAKHIR -->
         <div class="slide">
             <h1 style="color: #8b0000; font-size: 5rem; margin-bottom: 10px;">"</h1>
             <p style="font-size: 1.8rem; font-style: italic; line-height: 1.6; max-width: 900px; font-weight: 300;">
@@ -406,7 +348,6 @@
             </p>
         </div>
 
-        <!-- SLIDE 12: CLOSING -->
         <div class="slide">
             <h1 style="font-size: 4rem;">Happy Birthday,</h1>
             <h1 style="font-size: 3.5rem; color: #8b0000; margin-top: -10px;">Putri Aliya Atasya.</h1>
@@ -416,7 +357,6 @@
             <i class="fa-solid fa-heart" style="color: #8b0000; font-size: 3.5rem; margin-top: 30px;"></i>
         </div>
 
-        <!-- NAVIGASI -->
         <div class="nav-controls">
             <button class="btn-nav" id="btn-prev" onclick="gantiSlide(-1)"><i class="fa-solid fa-arrow-left"></i> Sebelumnya</button>
             <button class="btn-nav" id="btn-next" onclick="gantiSlide(1)">Selanjutnya <i class="fa-solid fa-arrow-right"></i></button>
@@ -464,3 +404,4 @@
     </script>
 
 </body>
+</html>
