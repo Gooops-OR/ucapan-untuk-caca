@@ -204,7 +204,7 @@
     <button id="btn-musik" onclick="aturMusik()"><i id="ikon-musik" class="fa-solid fa-play"></i></button>
 
     <!-- File audio langsung mengarah ke lagu.mp3 -->
-    <audio id="laguLatar" loop>
+    <audio id="laguLatar" loop autoplay>
         <source src="lagu.mp3" type="audio/mpeg">
     </audio>
 
@@ -390,6 +390,9 @@
         var lagu = document.getElementById("laguLatar");
         var ikon = document.getElementById("ikon-musik");
 
+        // MENGATUR VOLUME KE 30%
+        lagu.volume = 0.3;
+
         function aturMusik() {
             if (lagu.paused) {
                 lagu.play();
@@ -401,6 +404,30 @@
                 ikon.classList.add("fa-play");
             }
         }
+
+        // SISTEM AUTOPLAY PINTAR
+        window.addEventListener('load', function() {
+            var playPromise = lagu.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay sukses langsung
+                    ikon.classList.remove("fa-play");
+                    ikon.classList.add("fa-pause");
+                })
+                .catch(error => {
+                    // Jika browser memblokir autoplay, lagu akan otomatis 
+                    // berputar saat layar disentuh pertama kali
+                    document.body.addEventListener('click', function() {
+                        if (lagu.paused) {
+                            lagu.play();
+                            ikon.classList.remove("fa-play");
+                            ikon.classList.add("fa-pause");
+                        }
+                    }, { once: true });
+                });
+            }
+        });
     </script>
 
 </body>
